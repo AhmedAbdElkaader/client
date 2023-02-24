@@ -1,0 +1,21 @@
+header {
+    background: #e0cfb9
+}
+.welcome{
+    display: flex;
+    justify-content: space-around;
+    padding: 13px 0;
+    align-items: center;
+}
+
+.welcome h3 {
+    margin: 0;
+}
+.welcome button {
+    border: 1px solid #fff;
+    border-radius: 32px;
+    color: #303030;
+}
+section{
+    padding: 0;
+}

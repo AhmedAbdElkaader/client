@@ -1,0 +1,36 @@
+section{
+    background: radial-gradient(#b0b0b0, transparent);
+
+}
+section .row {
+    margin-top: 5%
+}
+.banar {
+    background-image: url('../../../assets/images/sale.jpg!odetail650');
+    height:100vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+}
+.cardStyle{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 40px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid #fff;
+    transition: transform 0s;
+}
+.cardStyle:hover {
+    transform: scale(1.1);
+    background: #fff
+}
+.cardStyle h2 {
+    text-align: center;
+    margin-top: 11px;
+    margin-bottom: 0;
+}
+.cardStyle img {
+    border-radius: 40px;
+   
+}

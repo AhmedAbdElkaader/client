@@ -1,0 +1,79 @@
+.main{
+    
+    text-align: center
+}
+.rate a {
+    color: red
+}
+.size span {
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+.plus {
+    margin: 14px 17px 14px 0;
+    font-size: 20px;
+}
+.plus span {
+    margin : 0 10px
+}
+.plus button{
+    min-width: auto;
+    font-size: 20px;
+    padding: 5px 8px;
+    color: #000;
+    border: 1px solid;
+    
+}
+
+.btn_addCart{
+    background: #f6c6a4
+}
+.addToCart{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+}
+.review img{
+    width: 86px
+}
+.review p {
+    margin-bottom: 4px
+}
+.review .row {
+    padding-bottom:10px;
+    padding-top:10px;
+    border-bottom: 1px dashed gray
+}
+.addReview{
+    border: 5px solid #f6c6a4;
+    padding:30px;
+    margin-top: 25px;
+}
+.addReview .addRate {
+    display: flex;
+    margin-bottom: 10px
+}
+.addRate .rate {
+    border-right: 1px solid #c8c8c8;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.addRate .rate a {
+    color: #000
+}
+.submit{
+    margin-top:20px;
+    background: #f6c6a4
+}
+.inputs {
+    display: flex;
+    justify-content: space-between
+}
+.inputs div {
+    width: 48%;
+}

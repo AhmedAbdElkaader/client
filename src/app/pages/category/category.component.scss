@@ -1,0 +1,60 @@
+.card_style{
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;;
+    position: relative;
+    max-height: 491px;
+    overflow: hidden;
+}
+.card_style div {
+    position: absolute;
+    right:0px;
+    top:0px;
+    background: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 5px;
+
+}
+.card_style div h1{
+       position: absolute;
+    right: 35px;
+    top: 15px;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.banar {
+    background-image: url('../../../assets/images/12-1.jpeg');
+    height:100vh;
+    background-size: cover
+}
+
+  .action-div {
+    position: absolute;
+    left:50%;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    background: rgba(254, 247, 246, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .action-div h1{
+      color: gray;
+      font-family: sans-serif
+  }
+  .product-item:hover .action-div {
+    opacity: 1;
+    visibility: visible;
+
+  }
