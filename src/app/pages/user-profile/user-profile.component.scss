@@ -19,3 +19,56 @@ header {
 section{
     padding: 0;
 }
+
+.main{
+    margin-top: 5%
+}
+.cardStyle{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    padding: 40px;
+    border: 1px solid #ebebeb;
+    transition: transform 0s;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-bottom: 3px solid #c58a3f;
+}
+.cardStyle .title{
+    font-size: 19px;
+    color: #968c58;
+}
+.cardStyle img {
+    width: 100px
+}
+
+.d-f {
+    display: flex;
+    margin-bottom: 10px
+}
+.d-f div:first-child{
+    width: 150px
+ }
+.d-f p {
+    margin-bottom: 2px;
+}
+.suptitle{
+    color: gray;
+}
+
+.tab2{
+    margin-top: 5%
+}
+.d-f-tab2 {
+    display: flex;
+}
+.d-f-tab2 div:first-child{
+   width: 200px
+}
+.editInfo{
+
+    border: 1px solid gray;
+    color: gray;
+    padding: 10px;
+    border-radius: 30px;
+    margin-top: 12px;
+
+}

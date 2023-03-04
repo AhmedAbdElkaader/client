@@ -31,195 +31,16 @@
     </div>
 
     <swiper [config]="config">
-      <ng-template swiperSlide>
+      <ng-template swiperSlide *ngFor="let item of category">
         <div class="product-item">
           <figure class="product-thumb">
-            <img src="assets/images/products/1.jpg" alt="">
+            <img [src]="item.image.image" alt="">
             <div class="action-links">
-              <!-- <a href="#" class="quick-view icon"><i class="ti-eye"></i></a>
-                  <a href="#" class="wishlist icon"><i class="ti-heart"></i></a>
-                  <a href="#" class="add-cart icon"><i class="ti-shopping-cart"></i></a> -->
               <button class="btn shopNow">Shop Now</button>
             </div>
           </figure>
           <div class="product-content">
-            <h5 class="product-name"><a href="#">Red Women Purses</a></h5>
-            <!-- <div class="ratings">
-                  <a href="#"><i class="ti-star"></i></a>
-                  <a href="#"><i class="ti-star"></i></a>
-                  <a href="#"><i class="ti-star"></i></a>
-                  <a href="#"><i class="ti-star"></i></a>
-                  <a href="#"><i class="ti-star"></i></a>
-                </div> -->
-            <!-- <p class="price">$35</p> -->
-          </div>
-        </div>
-      </ng-template>
-      <ng-template swiperSlide>
-        <div class="product-item">
-          <figure class="product-thumb">
-            <img src="assets/images/products/1.jpg" alt="">
-            <div class="action-links">
-              <!-- <a href="#" class="quick-view icon"><i class="ti-eye"></i></a>
-                    <a href="#" class="wishlist icon"><i class="ti-heart"></i></a>
-                    <a href="#" class="add-cart icon"><i class="ti-shopping-cart"></i></a> -->
-              <button class="btn shopNow">Shop Now</button>
-            </div>
-          </figure>
-          <div class="product-content">
-            <h5 class="product-name"><a href="#">Red Women Purses</a></h5>
-            <!-- <div class="ratings">
-                    <a href="#"><i class="ti-star"></i></a>
-                    <a href="#"><i class="ti-star"></i></a>
-                    <a href="#"><i class="ti-star"></i></a>
-                    <a href="#"><i class="ti-star"></i></a>
-                    <a href="#"><i class="ti-star"></i></a>
-                  </div> -->
-            <!-- <p class="price">$35</p> -->
-          </div>
-        </div>
-      </ng-template>
-      <ng-template swiperSlide>
-        <div class="product-item">
-          <figure class="product-thumb">
-            <img src="assets/images/products/1.jpg" alt="">
-            <div class="action-links">
-              <!-- <a href="#" class="quick-view icon"><i class="ti-eye"></i></a>
-                      <a href="#" class="wishlist icon"><i class="ti-heart"></i></a>
-                      <a href="#" class="add-cart icon"><i class="ti-shopping-cart"></i></a> -->
-              <button class="btn shopNow">Shop Now</button>
-            </div>
-          </figure>
-          <div class="product-content">
-            <h5 class="product-name"><a href="#">Red Women Purses</a></h5>
-            <!-- <div class="ratings">
-                      <a href="#"><i class="ti-star"></i></a>
-                      <a href="#"><i class="ti-star"></i></a>
-                      <a href="#"><i class="ti-star"></i></a>
-                      <a href="#"><i class="ti-star"></i></a>
-                      <a href="#"><i class="ti-star"></i></a>
-                    </div> -->
-            <!-- <p class="price">$35</p> -->
-          </div>
-        </div>
-      </ng-template>
-      <ng-template swiperSlide>
-        <div class="product-item">
-          <figure class="product-thumb">
-            <img src="assets/images/products/1.jpg" alt="">
-            <div class="action-links">
-              <!-- <a href="#" class="quick-view icon"><i class="ti-eye"></i></a>
-                        <a href="#" class="wishlist icon"><i class="ti-heart"></i></a>
-                        <a href="#" class="add-cart icon"><i class="ti-shopping-cart"></i></a> -->
-              <button class="btn shopNow">Shop Now</button>
-            </div>
-          </figure>
-          <div class="product-content">
-            <h5 class="product-name"><a href="#">Red Women Purses</a></h5>
-            <!-- <div class="ratings">
-                        <a href="#"><i class="ti-star"></i></a>
-                        <a href="#"><i class="ti-star"></i></a>
-                        <a href="#"><i class="ti-star"></i></a>
-                        <a href="#"><i class="ti-star"></i></a>
-                        <a href="#"><i class="ti-star"></i></a>
-                      </div> -->
-            <!-- <p class="price">$35</p> -->
-          </div>
-        </div>
-      </ng-template>
-      <ng-template swiperSlide>
-        <div class="product-item">
-          <figure class="product-thumb">
-            <img src="assets/images/products/1.jpg" alt="">
-            <div class="action-links">
-              <!-- <a href="#" class="quick-view icon"><i class="ti-eye"></i></a>
-                <a href="#" class="wishlist icon"><i class="ti-heart"></i></a>
-                <a href="#" class="add-cart icon"><i class="ti-shopping-cart"></i></a> -->
-              <button class="btn shopNow">Shop Now</button>
-            </div>
-          </figure>
-          <div class="product-content">
-            <h5 class="product-name"><a href="#">Red Women Purses</a></h5>
-            <!-- <div class="ratings">
-                <a href="#"><i class="ti-star"></i></a>
-                <a href="#"><i class="ti-star"></i></a>
-                <a href="#"><i class="ti-star"></i></a>
-                <a href="#"><i class="ti-star"></i></a>
-                <a href="#"><i class="ti-star"></i></a>
-              </div> -->
-            <!-- <p class="price">$35</p> -->
-          </div>
-        </div>
-      </ng-template>
-      <ng-template swiperSlide>
-        <div class="product-item">
-          <figure class="product-thumb">
-            <img src="assets/images/products/1.jpg" alt="">
-            <div class="action-links">
-              <!-- <a href="#" class="quick-view icon"><i class="ti-eye"></i></a>
-                  <a href="#" class="wishlist icon"><i class="ti-heart"></i></a>
-                  <a href="#" class="add-cart icon"><i class="ti-shopping-cart"></i></a> -->
-              <button class="btn shopNow">Shop Now</button>
-            </div>
-          </figure>
-          <div class="product-content">
-            <h5 class="product-name"><a href="#">Red Women Purses</a></h5>
-            <!-- <div class="ratings">
-                  <a href="#"><i class="ti-star"></i></a>
-                  <a href="#"><i class="ti-star"></i></a>
-                  <a href="#"><i class="ti-star"></i></a>
-                  <a href="#"><i class="ti-star"></i></a>
-                  <a href="#"><i class="ti-star"></i></a>
-                </div> -->
-            <!-- <p class="price">$35</p> -->
-          </div>
-        </div>
-      </ng-template>
-      <ng-template swiperSlide>
-        <div class="product-item">
-          <figure class="product-thumb">
-            <img src="assets/images/products/1.jpg" alt="">
-            <div class="action-links">
-              <!-- <a href="#" class="quick-view icon"><i class="ti-eye"></i></a>
-                    <a href="#" class="wishlist icon"><i class="ti-heart"></i></a>
-                    <a href="#" class="add-cart icon"><i class="ti-shopping-cart"></i></a> -->
-              <button class="btn shopNow">Shop Now</button>
-            </div>
-          </figure>
-          <div class="product-content">
-            <h5 class="product-name"><a href="#">Red Women Purses</a></h5>
-            <!-- <div class="ratings">
-                    <a href="#"><i class="ti-star"></i></a>
-                    <a href="#"><i class="ti-star"></i></a>
-                    <a href="#"><i class="ti-star"></i></a>
-                    <a href="#"><i class="ti-star"></i></a>
-                    <a href="#"><i class="ti-star"></i></a>
-                  </div> -->
-            <!-- <p class="price">$35</p> -->
-          </div>
-        </div>
-      </ng-template>
-      <ng-template swiperSlide>
-        <div class="product-item">
-          <figure class="product-thumb">
-            <img src="assets/images/products/1.jpg" alt="">
-            <div class="action-links">
-              <!-- <a href="#" class="quick-view icon"><i class="ti-eye"></i></a>
-                      <a href="#" class="wishlist icon"><i class="ti-heart"></i></a>
-                      <a href="#" class="add-cart icon"><i class="ti-shopping-cart"></i></a> -->
-              <button class="btn shopNow">Shop Now</button>
-            </div>
-          </figure>
-          <div class="product-content">
-            <h5 class="product-name"><a href="#">Red Women Purses</a></h5>
-            <!-- <div class="ratings">
-                      <a href="#"><i class="ti-star"></i></a>
-                      <a href="#"><i class="ti-star"></i></a>
-                      <a href="#"><i class="ti-star"></i></a>
-                      <a href="#"><i class="ti-star"></i></a>
-                      <a href="#"><i class="ti-star"></i></a>
-                    </div> -->
-            <!-- <p class="price">$35</p> -->
+            <h5 class="product-name"><a>{{item.name}}</a></h5>
           </div>
         </div>
       </ng-template>
@@ -398,18 +219,17 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3 col-sm-6">
+      <div class="col-md-3 col-sm-6" *ngFor="let item of products">
         <div class="product-item">
           <figure class="product-thumb">
-            <img src="assets/images/products/8.jpg" alt="">
+            <img [src]="item.images[0].image" alt="">
             <div class="action-links">
               <a href="#" class="quick-view icon"><i class="ti-eye"></i></a>
-              <a href="#" class="wishlist icon"><i class="ti-heart"></i></a>
               <a href="#" class="add-cart icon"><i class="ti-shopping-cart"></i></a>
             </div>
           </figure>
           <div class="product-content">
-            <h5 class="product-name"><a href="#">Red Women Purses</a></h5>
+            <h5 class="product-name"><a href="#">{{item.name}}</a></h5>
             <div class="ratings">
               <a href="#"><i class="ti-star"></i></a>
               <a href="#"><i class="ti-star"></i></a>
@@ -417,168 +237,7 @@
               <a href="#"><i class="ti-star"></i></a>
               <a href="#"><i class="ti-star"></i></a>
             </div>
-            <p class="price">$35</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-item">
-          <figure class="product-thumb">
-            <img src="assets/images/products/9.jpg" alt="">
-            <div class="action-links">
-              <a href="#" class="quick-view icon"><i class="ti-eye"></i></a>
-              <a href="#" class="wishlist icon"><i class="ti-heart"></i></a>
-              <a href="#" class="add-cart icon"><i class="ti-shopping-cart"></i></a>
-            </div>
-          </figure>
-          <div class="product-content">
-            <h5 class="product-name"><a href="#">Red Women Purses</a></h5>
-            <div class="ratings">
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-            </div>
-            <p class="price">$35</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-item">
-          <figure class="product-thumb">
-            <img src="assets/images/products/10.jpg" alt="">
-            <div class="action-links">
-              <a href="#" class="quick-view icon"><i class="ti-eye"></i></a>
-              <a href="#" class="wishlist icon"><i class="ti-heart"></i></a>
-              <a href="#" class="add-cart icon"><i class="ti-shopping-cart"></i></a>
-            </div>
-          </figure>
-          <div class="product-content">
-            <h5 class="product-name"><a href="#">Red Women Purses</a></h5>
-            <div class="ratings">
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-            </div>
-            <p class="price">$35</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-item">
-          <figure class="product-thumb">
-            <img src="assets/images/products/11.jpg" alt="">
-            <div class="action-links">
-              <a href="#" class="quick-view icon"><i class="ti-eye"></i></a>
-              <a href="#" class="wishlist icon"><i class="ti-heart"></i></a>
-              <a href="#" class="add-cart icon"><i class="ti-shopping-cart"></i></a>
-            </div>
-          </figure>
-          <div class="product-content">
-            <h5 class="product-name"><a href="#">Red Women Purses</a></h5>
-            <div class="ratings">
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-            </div>
-            <p class="price">$35</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-item">
-          <figure class="product-thumb">
-            <img src="assets/images/products/12.jpg" alt="">
-            <div class="action-links">
-              <a href="#" class="quick-view icon"><i class="ti-eye"></i></a>
-              <a href="#" class="wishlist icon"><i class="ti-heart"></i></a>
-              <a href="#" class="add-cart icon"><i class="ti-shopping-cart"></i></a>
-            </div>
-          </figure>
-          <div class="product-content">
-            <h5 class="product-name"><a href="#">Red Women Purses</a></h5>
-            <div class="ratings">
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-            </div>
-            <p class="price">$35</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-item">
-          <figure class="product-thumb">
-            <img src="assets/images/products/13.jpg" alt="">
-            <div class="action-links">
-              <a href="#" class="quick-view icon"><i class="ti-eye"></i></a>
-              <a href="#" class="wishlist icon"><i class="ti-heart"></i></a>
-              <a href="#" class="add-cart icon"><i class="ti-shopping-cart"></i></a>
-            </div>
-          </figure>
-          <div class="product-content">
-            <h5 class="product-name"><a href="#">Red Women Purses</a></h5>
-            <div class="ratings">
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-            </div>
-            <p class="price">$35</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-item">
-          <figure class="product-thumb">
-            <img src="assets/images/products/14.jpg" alt="">
-            <div class="action-links">
-              <a href="#" class="quick-view icon"><i class="ti-eye"></i></a>
-              <a href="#" class="wishlist icon"><i class="ti-heart"></i></a>
-              <a href="#" class="add-cart icon"><i class="ti-shopping-cart"></i></a>
-            </div>
-          </figure>
-          <div class="product-content">
-            <h5 class="product-name"><a href="#">Red Women Purses</a></h5>
-            <div class="ratings">
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-            </div>
-            <p class="price">$35</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-item">
-          <figure class="product-thumb">
-            <img src="assets/images/products/15.jpg" alt="">
-            <div class="action-links">
-              <a href="#" class="quick-view icon"><i class="ti-eye"></i></a>
-              <a href="#" class="wishlist icon"><i class="ti-heart"></i></a>
-              <a href="#" class="add-cart icon"><i class="ti-shopping-cart"></i></a>
-            </div>
-          </figure>
-          <div class="product-content">
-            <h5 class="product-name"><a href="#">Red Women Purses</a></h5>
-            <div class="ratings">
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-              <a href="#"><i class="ti-star"></i></a>
-            </div>
-            <p class="price">$35</p>
+            <p class="price">LE.{{item.price}}</p>
           </div>
         </div>
       </div>
@@ -586,6 +245,29 @@
   </div>
 </section>
 <!--Trending Products end -->
+
+<!--packages -->
+<section class="trending-products">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="sec-heading">
+          <h3 class="sec-title">Trending Packages</h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div style="cursor: pointer" class="col-12 col-md-4 pack" *ngFor="let item of allPacges">
+          <div class="cardStyle">
+              <img [src]="item.image">
+              <h2 >{{item.name}}</h2>
+              <p class="price">LE.{{item.total_price}}</p>
+          </div>
+      </div>
+  </div>
+  </div>
+</section>
+<!--packages -->
 
 <!-- Blog post start -->
 <!-- <section class="blog">

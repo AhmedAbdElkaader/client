@@ -20,6 +20,15 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { PackgesComponent } from './pages/packges/packges.component';
 import { PackgeDetailsComponent } from './pages/packge-details/packge-details.component';
 import { AboutComponent } from './pages/about/about.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+import { ToastrModule } from 'ngx-toastr';
+import { ShopCartComponent } from './pages/shop-cart/shop-cart.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdataClientComponent } from './pages/updata-client/updata-client.component';
+import { AddresComponent } from './pages/addres/addres.component';
+import { ShopComponent } from './pages/shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +44,12 @@ import { AboutComponent } from './pages/about/about.component';
     UserProfileComponent,
     PackgesComponent,
     PackgeDetailsComponent,
-    AboutComponent
+    AboutComponent,
+    ShopCartComponent,
+    CheckoutComponent,
+    UpdataClientComponent,
+    AddresComponent,
+    ShopComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +59,11 @@ import { AboutComponent } from './pages/about/about.component';
     HttpClientModule,
     SwiperModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatMenuModule,
+    MatIconModule,
+    MatDialogModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

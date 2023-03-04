@@ -1,15 +1,153 @@
 <header>
     <div class="container">
         <div class="welcome">
-            <h3>Hello Ahmed </h3>
-            <button class="btn">Edit my account</button>
+            <h3>Hello {{userName}} </h3>
+            <button class="btn" (click)="openDialog()">Edit my account</button>
         </div>
     </div>
 </header>
 <section>
+    <div class="container">
         <mat-tab-group>
-            <mat-tab label="First"> Content 1 </mat-tab>
-            <mat-tab label="Second"> Content 2 </mat-tab>
-            <mat-tab label="Third"> Content 3 </mat-tab>
+            <mat-tab label="Dashboard">
+                <div class="main">
+                    <h1> Recnt Order</h1>
+                    <div class="cardStyle">
+                        <p class="title">Order Sent</p>
+                        <div class="row">
+                            <div class="col-12 col-md-3">
+                                <div class="d-f">
+                                    <div>
+                                        <p class="suptitle">Order Number</p>
+                                        <p>#1</p>
+                                    </div>
+                                    <div>
+                                        <p class="suptitle">Date Order</p>
+                                        <p>19/2/2023</p>
+                                    </div>
+                                </div>
+                                <div class="d-f">
+                                    <div>
+                                        <p class="suptitle">Payment</p>
+                                        <p>vodafon cash</p>
+                                    </div>
+                                    <div>
+                                        <p class="suptitle">Total</p>
+                                        <p>200 LE</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-8 offset-md-1">
+                                <div>
+                                    <p>Total Item (2)</p>
+                                    <div>
+                                        <img src="../../../assets/images/pexels-ge-yonk-1152077.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Personal Information">
+                <section class="tab2">
+                    <div>
+                        <h1>Personal Information</h1>
+                        <h3>{{fullName}}</h3>
+                        <div class="d-f-tab2">
+                            <div>
+                                <p class="suptitle">Place</p>
+                                <p>{{city}}</p>
+                            </div>
+                            <div>
+                                <p class="suptitle">Mobile Number</p>
+                                <p>{{mobileNumber}}</p>
+                            </div>
+                        </div>
+                        <button class="btn editInfo">Edit Personal Info</button>
+                    </div>
+                    <hr>
+                    <div>
+                        <h1>Login Info</h1>
+                        <div class="d-f-tab2">
+                            <div>
+                                <p class="suptitle">E-mail</p>
+                                <p>{{email}}</p>
+                            </div>
+                            <div>
+                                <p class="suptitle">User Name</p>
+                                <p>{{userName}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <h1>More Information</h1>
+                        <div class="d-f-tab2">
+                            <div>
+                                <p class="suptitle">Best surprise</p>
+                                <p>{{best_surprise}}</p>
+                            </div>
+                            <div>
+                                <p class="suptitle">Favorite colour</p>
+                                <p>{{favColor}}</p>
+                            </div>
+                        </div>
+                        <div class="d-f-tab2">
+                            <div>
+                                <p class="suptitle">Marital status</p>
+                                <p>{{marital_status}}</p>
+                            </div>
+                            <div>
+                                <p class="suptitle">Ultimate goals</p>
+                                <p>{{Ultimate_goals}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </mat-tab>
+            <mat-tab label="My Orders">
+                <div class="main">
+                    <h1> History Order</h1>
+                    <div class="cardStyle" *ngFor="let item of orders">
+                        <p class="title">Order Sent</p>
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <div class="d-f">
+                                    <div>
+                                        <p class="suptitle">Order Number</p>
+                                        <p>#{{item.id}}</p>
+                                    </div>
+                                    <div>
+                                        <p class="suptitle">Date Order</p>
+                                        <p>{{item.issue_date | date : "yyyy/MM/dd"}}</p>
+                                    </div>
+                                </div>
+                                <div class="d-f">
+                                    <div>
+                                        <p class="suptitle">Payment</p>
+                                        <p>vodafon cash</p>
+                                    </div>
+                                    <div>
+                                        <p class="suptitle">Total</p>
+                                        <p>{{item.total_price}} LE</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-8  offset-md-1">
+                                <div>
+                                    <p>Total Item ({{item.quantities}})</p>
+                                    <div>
+                                        <img src="../../../assets/images/pexels-ge-yonk-1152077.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </mat-tab>
         </mat-tab-group>
+    </div>
 </section>

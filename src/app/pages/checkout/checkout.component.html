@@ -1,0 +1,25 @@
+<section class="mainSection">
+    <div class="middle">
+        <h1 class="title">Choose Payment</h1>
+        <label>
+            <input type="radio" (change)="radioValu(true)" name="radio" checked />
+            <div class="front-end box">
+                <mat-icon>account_balance</mat-icon>
+                <span>Cash On Delivery</span>
+            </div>
+        </label>
+
+        <label>
+            <input type="radio" (change)="radioValu(false)" name="radio" />
+            <div class="back-end box">
+                <mat-icon>payments</mat-icon>
+                <span>Vodafon Cash</span>
+            </div>
+        </label>
+    </div>
+    <div class="text-center">
+        <button class="btn confirm" (click)="openDialog()">Confirm</button>
+    </div>
+
+
+</section>

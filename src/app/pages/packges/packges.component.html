@@ -8,37 +8,13 @@
                 industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
         </div>
         <div class="row">
-            <div class="col" routerLink="/packges_details">
+            <div class="col-12 col-md-4 pack" *ngFor="let item of allPacges" (click)="pack_details(item.id)">
                 <div class="cardStyle">
-                    <img src="assets/images/ban-1.png">
-                    <h2>Title</h2>
-                    <ul>
-                        <li>- one</li>
-                        <li>- tow</li>
-                        <li>- three</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col" routerLink="/packges_details">
-                <div class="cardStyle">
-                    <img src="assets/images/ban-1.png">
-                    <h2>Title</h2>
-                    <ul>
-                        <li>- one</li>
-                        <li>- tow</li>
-                        <li>- three</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col" routerLink="/packges_details">
-                <div class="cardStyle">
-                    <img src="assets/images/ban-1.png">
-                    <h2>Title</h2>
-                    <ul>
-                        <li>- one</li>
-                        <li>- tow</li>
-                        <li>- three</li>
-                    </ul>
+                    <img [src]="item.image">
+                    <h2>{{item.name}}</h2>
+                    <!-- <ul>
+                        <li *ngFor="let prod of item.products">- {{prod.name}}</li>
+                    </ul> -->
                 </div>
             </div>
         </div>

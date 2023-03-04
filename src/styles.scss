@@ -159,8 +159,8 @@
   }
   
   @media screen and (max-width: 767px) {
-    .top-header {
-      display: none;
+    .top-header span:not(:last-child){
+      padding-right: 5px
     }
   }
   

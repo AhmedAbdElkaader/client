@@ -5,6 +5,9 @@ section{
 section .row {
     margin-top: 5%
 }
+.row .pack {
+    margin-bottom: 10px
+}
 .banar {
     background-image: url('../../../assets/images/sale.jpg!odetail650');
     height:100vh;
@@ -21,7 +24,7 @@ section .row {
     border: 1px solid #fff;
     transition: transform 0s;
 }
-.cardStyle:hover {
+.cardStyle:hover img {
     transform: scale(1.1);
     background: #fff
 }

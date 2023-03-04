@@ -7,10 +7,26 @@
                     <span>email: info@eiser.com</span>
                 </div>
                 <div class="col text-right">
-                    <span style="cursor: pointer" routerLink="/login">Login</span>
-                    <span>/</span>
-                    <span style="cursor: pointer" routerLink="/sign_up">Register</span>
-                    <!-- <span>track order</span> -->
+                    <div *ngIf="!ifLogin">
+                        <span style="cursor: pointer" routerLink="/login">Login</span>
+                        <span>/</span>
+                        <span style="cursor: pointer" routerLink="/sign_up">Register</span>
+                    </div>
+                    <div *ngIf="ifLogin">
+                        <span>{{userEmail}}</span>
+                        <span [matMenuTriggerFor]="menu" class="user-image"><img
+                                src="assets/images/userlogin.png"></span>
+                        <mat-menu #menu="matMenu" yPosition="below">
+                            <button routerLink="/user_profile" mat-menu-item>
+                                <mat-icon>person</mat-icon>
+                                Profile
+                            </button>
+                            <button mat-menu-item (click)="logout()">
+                                Logout
+                                <mat-icon>logout</mat-icon>
+                            </button>
+                        </mat-menu>
+                    </div>
                 </div>
             </div>
         </div>
@@ -21,9 +37,27 @@
             <a routerLink="/" class="logo">
                 <img style="width: 120px" src="assets/images/logo2.png" alt="">
             </a>
-            <a href="javascript:void(0);" id="mobile-menu-toggler">
+            <a href="javascript:void(0);" [matMenuTriggerFor]="menus" id="mobile-menu-toggler">
                 <i class="ti-align-justify"></i>
             </a>
+            <mat-menu #menus="matMenu" yPosition="below">
+                
+                <button routerLinkActive="activebutton" routerLink="/home" mat-menu-item>
+                    Home
+                </button>
+                <button routerLinkActive="activebutton" routerLink="/about" mat-menu-item>
+                    About
+                </button>
+                <button routerLinkActive="activebutton" routerLink="/categories" mat-menu-item>
+                    Categories
+                </button>
+                <button routerLinkActive="activebutton" routerLink="/packges" mat-menu-item>
+                    Packges
+                </button>
+                <button routerLinkActive="activebutton" routerLink="/shop" mat-menu-item>
+                    Shop
+                </button>
+            </mat-menu>
             <ul class="navbar-nav">
                 <!-- <li class="current-menu-item has-menu-child">
                     <a href="#">Home</a>
@@ -33,10 +67,11 @@
                         <li><a href="home-03.html">Home 03</a></li>
                     </ul>
                 </li> -->
-                <li><a routerLink="/home">Home</a></li>
-                <li><a routerLink="/about">About</a></li>
-                <li><a routerLink="/categories">Categories</a></li>
-                <li><a routerLink="/packges">Packges</a></li>
+                <li><a routerLinkActive="active" routerLink="/home">Home</a></li>
+                <li><a routerLinkActive="active" routerLink="/about">About</a></li>
+                <li><a routerLinkActive="active" routerLink="/categories">Categories</a></li>
+                <li><a routerLinkActive="active" routerLink="/packges">Packges</a></li>
+                <li><a routerLinkActive="active" routerLink="/shop">Shop</a></li>
             </ul>
 
             <div class="d-inline-flex align-items-center">
@@ -44,15 +79,15 @@
                     <!-- <img src="assets/images/icons/search.png" alt=""> -->
                     <i class="ti-search"></i>
                 </a>
-                <a href="#" class="cart-bag icon">
+                <a  class="cart-bag icon">
                     <!-- <img src="assets/images/icons/bag.png" alt=""> -->
-                    <i class="ti-shopping-cart"></i>
-                    <span class="itemCount">0</span>
+                    <i routerLink="/shop_cart" class="ti-shopping-cart"></i>
+                    <!-- <span class="itemCount">0</span> -->
                 </a>
-                <a href="#" class="wishlist icon">
+                <!-- <a href="#" class="wishlist icon">
                     <i class="ti-heart"></i>
                     <span class="itemCount">09</span>
-                </a>
+                </a> -->
             </div>
         </nav>
     </div>

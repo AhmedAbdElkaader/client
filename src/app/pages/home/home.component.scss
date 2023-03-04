@@ -1,8 +1,25 @@
 .shopNow {
-    background: #ff5353;
+    background: #dcb78d;
     color: #fff
 }
 .swiper{
     position: static
 }
-
+.cardStyle{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding:40px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid #fff;
+    transition: transform 0s;
+}
+.cardStyle img {
+    border-radius: 50%
+}
+.cardStyle h2 {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.btn-default{
+    background-color: #dcb78d !important;
+}

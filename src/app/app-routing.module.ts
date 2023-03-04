@@ -10,6 +10,9 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { PackgesComponent } from './pages/packges/packges.component';
 import { PackgeDetailsComponent } from './pages/packge-details/packge-details.component';
 import { AboutComponent } from './pages/about/about.component';
+import { ShopCartComponent } from './pages/shop-cart/shop-cart.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { ShopComponent } from './pages/shop/shop.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,10 +22,13 @@ const routes: Routes = [
   { path: 'sign_up', component: SingupComponent },
   { path: 'categories', component: CategoryComponent },
   { path: 'packges', component: PackgesComponent },
-  { path: 'packges_details', component: PackgeDetailsComponent },
-  { path: 'Products', component: ProductsComponent },
-  { path: 'products_details', component: ProductsDetailsComponent },
+  { path: 'packges_details/:id', component: PackgeDetailsComponent },
+  { path: 'Products/:id', component: ProductsComponent },
+  { path: 'products_details/:id', component: ProductsDetailsComponent },
   { path: 'user_profile', component: UserProfileComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'shop_cart', component: ShopCartComponent },
+  { path: 'shop', component: ShopComponent },
 ];
 
 @NgModule({

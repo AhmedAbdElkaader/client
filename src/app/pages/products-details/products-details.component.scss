@@ -63,8 +63,11 @@
     padding-right: 5px;
     padding-left: 5px;
 }
-.addRate .rate a {
-    color: #000
+ .dot {
+    color: #000 !important
+}
+.activeDot {
+    color: red !important 
 }
 .submit{
     margin-top:20px;
@@ -76,4 +79,9 @@
 }
 .inputs div {
     width: 48%;
+}
+.stock {
+    border: 1px solid #e3e3e3;
+    color: #dcb78d;
+
 }

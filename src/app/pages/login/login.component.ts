@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RestService } from 'src/app/services/rest.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,7 +9,7 @@ import { RestService } from 'src/app/services/rest.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private rest :RestService){}
+  constructor(private rest :RestService , private route : Router){}
 
   loginForm: FormGroup | any;
 
@@ -24,6 +25,14 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid){
       this.rest.login(form).subscribe((res :any) => {
         console.log(res)
+        localStorage.setItem("token",res.access_token)
+        localStorage.setItem("user",res.user.email)
+        localStorage.setItem("clientID",res.user.id)
+        this.rest.succesToast("Login Successfully")
+        this.rest.SendDataIfLogin("true")
+        this.route.navigateByUrl("/home")
+      }, (err : any) => {
+        this.rest.erorrToaster("Pleas check Email Or Password")
       })
     }
   }

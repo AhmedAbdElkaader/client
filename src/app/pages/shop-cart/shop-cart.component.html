@@ -1,0 +1,53 @@
+<section>
+    <div class="container">
+        <div class="row shopping">
+            <div class="col">
+                <h1>Shopping cart</h1>
+            </div>
+            <div class="col text-right">
+                <p><a>remove all</a></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col">Price</div>
+            <div class="col">Quantity</div>
+            <div class="col">Total</div>
+            <div class="col"></div>
+        </div>
+        <hr>
+        <div class="row" *ngFor="let item of cart">
+            <div class="col-12">
+                <div class="card_style">
+                    <div class="row">
+                        <div class="col">
+                            <img [src]="item.imagePath.changingThisBreaksApplicationSecurity">
+                        </div>
+                        <div class="col">
+                            <p>{{item.name}}</p>
+                        </div>
+                        <div class="col">
+                            <p>{{item.price}} LE</p>
+                        </div>
+                        <div class="col">
+                            <p>{{item.count}}</p>
+                        </div>
+                        <div class="col">
+                            <p>{{item.count * item.price}} LE</p>
+                        </div>
+                        <div class="col">
+                            <a>remove</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="text-center Checkout">
+            <button class="btn" routerLink="/checkout">Checkout</button>
+        </div>
+    </div>
+</section>

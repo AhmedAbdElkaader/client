@@ -2,13 +2,13 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-6">
-                    <img src="assets/images/4.jpg" alt="">
+            <div class="col-12 col-md-6">
+                <img [src]="packImage" alt="">
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <section class="main">
-                    <h2>Packge Name</h2>
-                    <h2>400 LE</h2>
+                    <h2>{{name}}</h2>
+                    <h2>{{price}} LE</h2>
                     <p>
                         Your ultimate favorite Ombre is back in a gorgeous rose hue! Super soft, light and breathable
                         Modal,
@@ -18,26 +18,23 @@
                         Everyday simplicity.
                     </p>
                 </section>
-                <h4>Discount 50%</h4>
+                <h4>Discount {{discount}}</h4>
             </div>
         </div>
 
-        <div class="product">
-            <h3>Prod Name</h3>
-            <div >
-                <p>total item (2)</p>
-                <img src="assets/images/pexels-ge-yonk-1152077.jpg">
-            </div>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="product" *ngFor="let item of products">
+                    <h3>{{item.name}}</h3>
+                    <div>
+                        <p>total item (2)</p>
+                        <img [src]="item.imagePath">
+                    </div>
 
-        </div>
-        <div class="product">
-                <h3>Prod Name</h3>
-                <div >
-                    <p>total item (2)</p>
-                    <img src="assets/images/pexels-ge-yonk-1152077.jpg">
                 </div>
-    
             </div>
-        <button class="btn addOrder">Add Order</button>
+        </div>
+
+        <button class="btn addOrder">Add To Cart</button>
     </div>
 </section>

@@ -7,22 +7,30 @@
     max-height: 491px;
     overflow: hidden;
 }
+
+
 .card_style div {
     position: absolute;
     right:0px;
     top:0px;
-    background: rgba(0,0,0,0.4);
+    background: rgb(255 181 125 / 10%);
     width: 100%;
     height: 100%;
     text-align: center;
     border-radius: 5px;
-
+    transition: 0.3s;
+}
+.card_style img {
+  transition: transform .5s;
+}
+.card_style:hover img {
+  transform: scale(1.5)
 }
 .card_style div h1{
-       position: absolute;
+    position: absolute;
     right: 35px;
     top: 15px;
-    color: #fff;
+    color: gray;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 .banar {
@@ -58,3 +66,10 @@
     visibility: visible;
 
   }
+  @media only screen and (max-width:768px) {
+    .banar {
+      height: 34vh;
+     background-size: contain;
+     background-repeat: no-repeat;
+    }
+ }
