@@ -23,11 +23,11 @@
         </div>
 
         <div class="row">
-            <div class="col-12 col-md-4">
-                <div class="product" *ngFor="let item of products">
-                    <h3>{{item.name}}</h3>
+            <div class="col-12 col-md-4" *ngFor="let item of products">
+                <div class="product">
+                    <h3>{{item.products.name}}</h3>
                     <div>
-                        <p>total item (2)</p>
+                        <p>Amount ({{item.amount}})</p>
                         <img [src]="item.imagePath">
                     </div>
 
@@ -35,6 +35,6 @@
             </div>
         </div>
 
-        <button class="btn addOrder">Add To Cart</button>
+        <button class="btn addOrder" (click)="addToCart()">Add To Cart</button>
     </div>
 </section>

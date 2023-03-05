@@ -81,8 +81,8 @@
                 </a>
                 <a  class="cart-bag icon">
                     <!-- <img src="assets/images/icons/bag.png" alt=""> -->
-                    <i routerLink="/shop_cart" class="ti-shopping-cart"></i>
-                    <!-- <span class="itemCount">0</span> -->
+                    <i *ngIf="ifLogin" style="cursor: pointer" routerLink="/shop_cart" class="ti-shopping-cart"></i>
+                    <span *ngIf="showCardNotifcation" class="itemCount">{{cardLength}}</span>
                 </a>
                 <!-- <a href="#" class="wishlist icon">
                     <i class="ti-heart"></i>

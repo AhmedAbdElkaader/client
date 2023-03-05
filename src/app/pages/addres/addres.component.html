@@ -14,7 +14,7 @@
                     <input  formControlName="address" type="text" class="form-control">
                 </div>
     
-                <button (click)="onNoClick()" class="btn">Save</button>
+                <button (click)="onNoClick()" [disabled]="!clientAddres.valid" class="btn">Save</button>
             </form>
         </div>
     </section>

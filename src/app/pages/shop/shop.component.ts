@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class ShopComponent implements OnInit {
 
   products:any
-  rating:any
+  rating:any = []
   constructor(private rest :RestService , 
     private routing : Router,
      private _sanitizer: DomSanitizer,){}
@@ -26,7 +26,9 @@ export class ShopComponent implements OnInit {
       console.log(res)
 
       res.forEach((element :any) => {
+        this.rating = []
         for(let i = 0 ; i < element.rating ; i++){
+          console.log(element)
           this.rating.push("1")
         }
         element.rating_arr =  this.rating

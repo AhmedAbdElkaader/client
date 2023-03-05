@@ -13,6 +13,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { ShopCartComponent } from './pages/shop-cart/shop-cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ShopComponent } from './pages/shop/shop.component';
+import { ForgetpwComponent } from './pages/forgetpw/forgetpw.component';
+import { ResetpwComponent } from './pages/resetpw/resetpw.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -29,6 +31,8 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'shop_cart', component: ShopCartComponent },
   { path: 'shop', component: ShopComponent },
+  { path: 'forget_pw', component: ForgetpwComponent },
+  { path: 'reset_pw', component: ResetpwComponent },
 ];
 
 @NgModule({

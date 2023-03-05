@@ -78,6 +78,7 @@ export class ProductsDetailsComponent implements OnInit {
     cart.push(this.prodObj)
     localStorage.setItem("cart",JSON.stringify(cart))
     this.rest.succesToast("Product Added in Your Cart")
+    this.rest.SendDataCard(true)
   }
 
   plus(){

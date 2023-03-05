@@ -1,0 +1,13 @@
+<section>
+    <img src="assets/images/logo2.png">
+    <div>
+        <label>Enter Code</label>
+        <input [(ngModel)]="code" type="text" class="form-control">
+    </div>
+
+    <div style="margin-top: 15px">
+        <label>New Password</label>
+        <input [(ngModel)]="password" type="text" class="form-control">
+    </div>
+    <button (click)="submit()" class="btn btn-primary">Send</button>
+</section>

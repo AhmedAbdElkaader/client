@@ -17,6 +17,7 @@ export class PackgeDetailsComponent implements OnInit {
   products:any = []
   price:any
   quantity:any
+  response :any
   constructor(private route : ActivatedRoute,
     private _sanitizer: DomSanitizer,
      private rest : RestService){}
@@ -29,6 +30,7 @@ export class PackgeDetailsComponent implements OnInit {
   getData(){
     this.rest.packDetails(this.packID).subscribe((res :any) => {
       console.log(res)
+      this.response = res
       this.discount = res.discount
       this.name = res.name
       this.price = res.total_price
@@ -40,9 +42,29 @@ export class PackgeDetailsComponent implements OnInit {
         this.packImage = "assets/images/rk.jpeg"
       }
       res.ProductPackages.forEach((element:any) => {
-        element.imagePath = this._sanitizer.bypassSecurityTrustUrl(`data:image/png;base64,`+ element.images[0].image);
+        if(element.products.image.length != 0){
+          element.imagePath = this._sanitizer.bypassSecurityTrustUrl(`data:image/png;base64,`+ element.products.image[0]);
+        }else {
+          element.imagePath = "assets/images/rk.jpeg"
+        }
       });
       this.products = res.ProductPackages
     })
+  }
+
+  addToCart(){
+    let cart = []
+    cart.push(this.response)
+    localStorage.getItem('cart')
+    if(localStorage.getItem('cart')){
+      let dumCart:any = localStorage.getItem('cart')
+      dumCart = JSON.parse(dumCart)
+      dumCart.push(this.response)
+      localStorage.setItem("cart",JSON.stringify(dumCart))
+    }else {
+      localStorage.setItem("cart",JSON.stringify(cart))
+    }
+    this.rest.succesToast("Package Added in Your Cart")
+    this.rest.SendDataCard(true)
   }
 }

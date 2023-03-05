@@ -29,6 +29,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { UpdataClientComponent } from './pages/updata-client/updata-client.component';
 import { AddresComponent } from './pages/addres/addres.component';
 import { ShopComponent } from './pages/shop/shop.component';
+import { ForgetpwComponent } from './pages/forgetpw/forgetpw.component';
+import { ResetpwComponent } from './pages/resetpw/resetpw.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { ShopComponent } from './pages/shop/shop.component';
     UpdataClientComponent,
     AddresComponent,
     ShopComponent,
+    ForgetpwComponent,
+    ResetpwComponent,
   ],
   imports: [
     BrowserModule,

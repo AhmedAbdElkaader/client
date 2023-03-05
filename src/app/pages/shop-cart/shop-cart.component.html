@@ -19,11 +19,11 @@
         </div>
         <hr>
         <div class="row" *ngFor="let item of cart">
-            <div class="col-12">
+            <div class="col-12" *ngIf="item.count">
                 <div class="card_style">
                     <div class="row">
                         <div class="col">
-                            <img [src]="item.imagePath.changingThisBreaksApplicationSecurity">
+                            <img src="{{item.imagePath}}">
                         </div>
                         <div class="col">
                             <p>{{item.name}}</p>
@@ -45,6 +45,32 @@
             </div>
         </div>
         <hr>
+        <div class="row" *ngFor="let item of cart">
+                <div class="col-12" *ngIf="!item.count">
+                    <div class="card_style">
+                        <div class="row">
+                            <div class="col">
+                                <img src="{{item.image}}">
+                            </div>
+                            <div class="col">
+                                <p>{{item.name}}</p>
+                            </div>
+                            <div class="col">
+                                <p>{{item.total_price}} LE</p>
+                            </div>
+                            <div class="col">
+                                <p>{{item.ProductPackages.length}}</p>
+                            </div>
+                            <div class="col">
+                                <p>{{item.total_price}} LE</p>
+                            </div>
+                            <div class="col">
+                                <a>remove</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         <div class="text-center Checkout">
             <button class="btn" routerLink="/checkout">Checkout</button>

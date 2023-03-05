@@ -8,8 +8,9 @@ import { Observable, Subject, BehaviorSubject } from 'rxjs';
 })
 export class RestService {
 
-  baseUrl = "http://89.116.25.82:33331/api"
+  baseUrl = "https://de6f-2c0f-fc89-8020-e742-148-aa78-d313-35c3.ngrok.io/api"
   private ifLogin = new Subject<any>();
+  private card = new Subject<any>();
   constructor(private http: HttpClient , private toastr: ToastrService ) { }
 
 
@@ -116,6 +117,20 @@ export class RestService {
   }
 
 
+  // forgetPW
+
+  forget_pw(obj:any ){
+    // const headers = new HttpHeaders({
+    //   'Content-Type': 'application/json',
+    //   'Authorization': `Bearer ${token}`
+    // })
+    return this.http.post(`${this.baseUrl}/client/forgot/`, obj)
+  }
+
+  resetpw (obj:any){
+    return this.http.post(`${this.baseUrl}/client/reset/`, obj)
+  }
+
   // obser
 
   SendDataIfLogin(event: any) {
@@ -124,5 +139,13 @@ export class RestService {
 
   getDataIfLogin(): Observable<any> {
     return this.ifLogin.asObservable();
+  }
+
+  SendDataCard(event: any) {
+    this.card.next(event);
+  }
+
+  getDataCard(): Observable<any> {
+    return this.card.asObservable();
   }
 }

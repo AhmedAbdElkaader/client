@@ -17,7 +17,13 @@ export class ShopCartComponent implements OnInit {
 
 
     this.cart.forEach((element: any) => {
-      element.imagePath = element.images[0].image
+      if(element.count){
+        element.imagePath = element.images[0].image
+      }else {
+        if(element.image == null){
+          element.image = "assets/images/rk.jpeg"
+        }
+      }
     });
   }
 
