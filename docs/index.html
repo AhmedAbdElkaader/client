@@ -18,22 +18,29 @@
 
   <app-root></app-root>
 
-  <div id="fb-customer-chat" class="fb-customerchat"></div>
-  
+  <!-- Messenger Chat Plugin Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Chat Plugin code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
   <script>
     var chatbox = document.getElementById('fb-customer-chat');
-    chatbox.setAttribute("page_id", "1129125743842390");
+    chatbox.setAttribute("page_id", "104904875885017");
     chatbox.setAttribute("attribution", "biz_inbox");
   </script>
+
+  <!-- Your SDK code -->
   <script>
-    window.fbAsyncInit = function () {
+    window.fbAsyncInit = function() {
       FB.init({
-        xfbml: true,
-        version: 'v3.0'
+        xfbml            : true,
+        version          : 'v16.0'
       });
     };
 
-    (function (d, s, id) {
+    (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
@@ -41,8 +48,7 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   </script>
-  <script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
-<script src="runtime.32385dbc67292871.js" type="module"></script><script src="polyfills.110cae2e69f1b4fa.js" type="module"></script><script src="main.bf40a8d14207d324.js" type="module"></script>
+<script src="runtime.32385dbc67292871.js" type="module"></script><script src="polyfills.110cae2e69f1b4fa.js" type="module"></script><script src="main.bc9b00bc5536ff96.js" type="module"></script>
 
 </body></html>
