@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RestService } from 'src/app/services/rest.service';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { UpdataClientComponent } from '../updata-client/updata-client.component';
+import { DomSanitizer } from '@angular/platform-browser';
+import { UpdateMoreInfoComponent } from '../update-more-info/update-more-info.component';
 
 @Component({
   selector: 'app-user-profile',
@@ -21,7 +23,9 @@ export class UserProfileComponent implements OnInit {
   marital_status :any
   Ultimate_goals :any
   orders :any = []
-  constructor(private rest: RestService, public dialog: MatDialog) { }
+  constructor(private rest: RestService,
+    private _sanitizer: DomSanitizer,
+     public dialog: MatDialog) { }
 
   ngOnInit() {
     this.token = localStorage.getItem("token")
@@ -50,6 +54,12 @@ export class UserProfileComponent implements OnInit {
       this.marital_status = res['marital status'] ? res['marital status'] : "No Data Found"
       this.Ultimate_goals = res['your ultimate goal'] ? res['your ultimate goal'] : "No Data Found"
       this.orders = res.orders
+
+      res.orders.forEach((element:any) => {
+        element.OrdersProducts.forEach((item :any) => {
+          item.ordersproducts.images[0].image = this._sanitizer.bypassSecurityTrustUrl(`data:image/png;base64,`+ item.ordersproducts.images[0].image)
+        });
+      });
     })
   }
 
@@ -70,6 +80,23 @@ export class UserProfileComponent implements OnInit {
     })
   }
 
+  editMoreInfo(){
+    const dialogRef = this.dialog.open(UpdateMoreInfoComponent, {
+      width: '500px'
+    });
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log(result)
+      if(result){
+        result.id = this.clientID
+        this.rest.finshClientData(result, this.token).subscribe((res: any) => {
+          this.getData()
+          console.log(res)
+        })
+      }
+    });
+  }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(UpdataClientComponent, {
       width: '500px'
@@ -77,11 +104,14 @@ export class UserProfileComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log(result)
-      let results : any = result
-      results.id = this.clientID
-      this.rest.updateClientData(results,this.token).subscribe((res :any) => {
-        console.log(res)
-      })
+      if(result){
+        let results : any = result
+        results.id = this.clientID
+        this.rest.updateClientData(results,this.token).subscribe((res :any) => {
+          this.getData()
+          console.log(res)
+        })
+      }
     });
   }
 

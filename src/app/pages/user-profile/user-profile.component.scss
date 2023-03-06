@@ -70,5 +70,10 @@ section{
     padding: 10px;
     border-radius: 30px;
     margin-top: 12px;
-
 }
+
+@media only screen and (max-width:768px) {
+    .d-f-tab2 {
+        display: block;
+    }
+ }

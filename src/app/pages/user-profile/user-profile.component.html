@@ -12,41 +12,43 @@
             <mat-tab label="Dashboard">
                 <div class="main">
                     <h1> Recnt Order</h1>
-                    <div class="cardStyle">
-                        <p class="title">Order Sent</p>
-                        <div class="row">
-                            <div class="col-12 col-md-3">
-                                <div class="d-f">
-                                    <div>
-                                        <p class="suptitle">Order Number</p>
-                                        <p>#1</p>
+                    <div *ngFor="let item of orders; let i = index">
+                        <div class="cardStyle" *ngIf="i == 0">
+                            <p class="title">Order Sent</p>
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <div class="d-f">
+                                        <div>
+                                            <p class="suptitle">Order Number</p>
+                                            <p>#{{item.id}}</p>
+                                        </div>
+                                        <div>
+                                            <p class="suptitle">Date Order</p>
+                                            <p>{{item.issue_date | date : "yyyy/MM/dd"}}</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p class="suptitle">Date Order</p>
-                                        <p>19/2/2023</p>
+                                    <div class="d-f">
+                                        <div>
+                                            <p class="suptitle">Payment</p>
+                                            <p>vodafon cash</p>
+                                        </div>
+                                        <div>
+                                            <p class="suptitle">Total</p>
+                                            <p>{{item.total_price}} LE</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="d-f">
+                                <div class="col-12 col-md-8  offset-md-1">
                                     <div>
-                                        <p class="suptitle">Payment</p>
-                                        <p>vodafon cash</p>
-                                    </div>
-                                    <div>
-                                        <p class="suptitle">Total</p>
-                                        <p>200 LE</p>
+                                        <p>Total Item ({{item.OrdersProducts.length}})</p>
+                                        <div *ngFor="let img of item.OrdersProducts">
+                                            <img [src]="img.ordersproducts.images[0].image">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-8 offset-md-1">
-                                <div>
-                                    <p>Total Item (2)</p>
-                                    <div>
-                                        <img src="../../../assets/images/pexels-ge-yonk-1152077.jpg">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </mat-tab>
@@ -82,7 +84,7 @@
                         </div>
                     </div>
                     <hr>
-                    <div>
+                    <div style="margin-bottom: 10px">
                         <h1>More Information</h1>
                         <div class="d-f-tab2">
                             <div>
@@ -104,6 +106,7 @@
                                 <p>{{Ultimate_goals}}</p>
                             </div>
                         </div>
+                        <button class="btn editInfo" (click)="editMoreInfo()">Edit More Info</button>
                     </div>
                 </section>
             </mat-tab>
@@ -137,9 +140,9 @@
                             </div>
                             <div class="col-12 col-md-8  offset-md-1">
                                 <div>
-                                    <p>Total Item ({{item.quantities}})</p>
-                                    <div>
-                                        <img src="assets/images/pexels-ge-yonk-1152077.jpg">
+                                    <p>Total Item ({{item.OrdersProducts.length}})</p>
+                                    <div *ngFor="let img of item.OrdersProducts">
+                                        <img [src]="img.ordersproducts.images[0].image">
                                     </div>
                                 </div>
                             </div>

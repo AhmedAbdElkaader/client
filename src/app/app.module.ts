@@ -31,6 +31,7 @@ import { AddresComponent } from './pages/addres/addres.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { ForgetpwComponent } from './pages/forgetpw/forgetpw.component';
 import { ResetpwComponent } from './pages/resetpw/resetpw.component';
+import { UpdateMoreInfoComponent } from './pages/update-more-info/update-more-info.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { ResetpwComponent } from './pages/resetpw/resetpw.component';
     ShopComponent,
     ForgetpwComponent,
     ResetpwComponent,
+    UpdateMoreInfoComponent,
   ],
   imports: [
     BrowserModule,

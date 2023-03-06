@@ -1,0 +1,40 @@
+<section>
+    <div>
+        <form [formGroup]="updateClient">
+            <div class="form-group">
+                <label>Marital status</label>
+                <input formControlName="marital status" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Job</label>
+                <input formControlName="job" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Favorite colour</label>
+                <input formControlName="favorite colour" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>How did you know us</label>
+                <input  formControlName="how did you know us" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Your ultimate goal</label>
+                <input  formControlName="your ultimate goal" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Yow you make yourself happy</label>
+                <input  formControlName="how you make yourself happy" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>How do you spend your spare time</label>
+                <input  formControlName="how do you spend your spare time" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Do you like surprises, if yes, what's your best surprise</label>
+                <input  formControlName="do you like surprises, if yes, what's your best surprise" type="text" class="form-control">
+            </div>
+
+            <button (click)="onNoClick()" class="btn">Save</button>
+        </form>
+    </div>
+</section>
