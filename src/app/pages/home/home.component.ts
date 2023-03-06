@@ -14,8 +14,11 @@ export class HomeComponent implements OnInit {
 
   config: SwiperOptions = {
     breakpoints: {
+      300 : {
+        slidesPerView: 2,
+      },
       640: {
-        slidesPerView: 1,
+        slidesPerView: 2,
       },
       768: {
         slidesPerView: 2,

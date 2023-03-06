@@ -4,12 +4,12 @@
             <div class="col">
                 <h1>Shopping cart</h1>
             </div>
-            <div class="col text-right">
-                <p><a>remove all</a></p>
+            <div *ngIf="!showMasge" class="col text-right">
+                <p (click)="removeAll()"><a>remove all</a></p>
             </div>
         </div>
 
-        <div class="row">
+        <!-- <div *ngIf="!showMasge" class="row">
             <div class="col"></div>
             <div class="col"></div>
             <div class="col">Price</div>
@@ -17,35 +17,38 @@
             <div class="col">Total</div>
             <div class="col"></div>
         </div>
-        <hr>
-        <div class="row" *ngFor="let item of cart">
-            <div class="col-12" *ngIf="item.count">
-                <div class="card_style">
-                    <div class="row">
-                        <div class="col">
-                            <img src="{{item.imagePath}}">
-                        </div>
-                        <div class="col">
-                            <p>{{item.name}}</p>
-                        </div>
-                        <div class="col">
-                            <p>{{item.price}} LE</p>
-                        </div>
-                        <div class="col">
-                            <p>{{item.count}}</p>
-                        </div>
-                        <div class="col">
-                            <p>{{item.count * item.price}} LE</p>
-                        </div>
-                        <div class="col">
-                            <a>remove</a>
+        <hr> -->
+        <div *ngIf="!showMasge">
+            <div class="row" *ngFor="let item of cart">
+                <div class="col-12" *ngIf="item.count">
+                    <div class="card_style">
+                        <div class="row">
+                            <div class="col">
+                                <img src="{{item.imagePath.changingThisBreaksApplicationSecurity}}">
+                            </div>
+                            <div class="col">
+                                <p>{{item.name}}</p>
+                            </div>
+                            <div class="col">
+                                <p>{{item.price}} LE</p>
+                            </div>
+                            <div class="col">
+                                <p>{{item.count}}</p>
+                            </div>
+                            <div class="col">
+                                <p>{{item.count * item.price}} LE</p>
+                            </div>
+                            <div class="col" (click)="removeitem(item.id)">
+                                <a>remove</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <hr>
-        <div class="row" *ngFor="let item of cart">
+        <hr *ngIf="!showMasge">
+        <div *ngIf="!showMasge">
+            <div  class="row" *ngFor="let item of cart">
                 <div class="col-12" *ngIf="!item.count">
                     <div class="card_style">
                         <div class="row">
@@ -71,9 +74,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <h1 *ngIf="showMasge">Shop Cart Is Empty</h1>
 
-        <div class="text-center Checkout">
+        <div *ngIf="!showMasge" class="text-center Checkout">
             <button class="btn" routerLink="/checkout">Checkout</button>
         </div>
+        <div *ngIf="showMasge" class="text-center Checkout">
+                <button class="btn" routerLink="/shop">Shop Now</button>
+            </div>
     </div>
 </section>

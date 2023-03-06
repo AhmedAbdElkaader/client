@@ -8,7 +8,7 @@ import { Observable, Subject, BehaviorSubject } from 'rxjs';
 })
 export class RestService {
 
-  baseUrl = "https://de6f-2c0f-fc89-8020-e742-148-aa78-d313-35c3.ngrok.io/api"
+  baseUrl = "http://89.116.25.82:33331/api"
   private ifLogin = new Subject<any>();
   private card = new Subject<any>();
   constructor(private http: HttpClient , private toastr: ToastrService ) { }

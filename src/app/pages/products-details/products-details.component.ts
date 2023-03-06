@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import SwiperCore, { Autoplay, Keyboard,  Pagination, Scrollbar, Zoom, SwiperOptions } from 'swiper';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RestService } from 'src/app/services/rest.service';
 import { DomSanitizer } from '@angular/platform-browser';
 SwiperCore.use([Autoplay, Keyboard, Pagination, Scrollbar, Zoom,]);
@@ -31,6 +31,7 @@ export class ProductsDetailsComponent implements OnInit {
   token : any
   clientID :any
   constructor(private route : ActivatedRoute ,
+    private routing : Router,
     private _sanitizer: DomSanitizer,
      private rest : RestService){}
 
@@ -73,12 +74,18 @@ export class ProductsDetailsComponent implements OnInit {
     })
   }
   addToCart(){
-    this.prodObj.count = this.count
-    let cart = []
-    cart.push(this.prodObj)
-    localStorage.setItem("cart",JSON.stringify(cart))
-    this.rest.succesToast("Product Added in Your Cart")
-    this.rest.SendDataCard(true)
+    localStorage.getItem('token')
+    if(localStorage.getItem('token')){
+      this.prodObj.count = this.count
+      let cart = []
+      cart.push(this.prodObj)
+      localStorage.setItem("cart",JSON.stringify(cart))
+      this.rest.succesToast("Product Added in Your Cart")
+      this.rest.SendDataCard(true)
+    }else {
+      this.routing.navigateByUrl("/login")
+    }
+   
   }
 
   plus(){

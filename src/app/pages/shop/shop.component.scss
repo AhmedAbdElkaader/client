@@ -9,3 +9,19 @@
 .ratings a {
     color: red !important
 }
+figure{
+    border: 1px solid #e1e1e1;
+    padding: 15px 5px;
+    margin-bottom: 9px !important
+
+}
+
+@media only screen and (max-width:768px) {
+    figure img {
+        height: 153px;
+        
+    }
+    .product-item .product-content .price{
+        font-size: 13px
+    }
+ }

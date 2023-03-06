@@ -1,3 +1,9 @@
+
+.banarhome {
+    // background-image: url(../../../assets/images/homepanar.jpeg);
+    background: url("../../../assets/images/homepanar.jpeg") no-repeat center left;
+     background-size: cover;
+}
 .shopNow {
     background: #dcb78d;
     color: #fff
@@ -6,12 +12,9 @@
     position: static
 }
 .cardStyle{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    padding:40px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border: 1px solid #fff;
+    border: 1px solid #eee;
     transition: transform 0s;
+    margin-bottom: 10px;
 }
 .cardStyle img {
     border-radius: 50%
@@ -19,7 +22,63 @@
 .cardStyle h2 {
     margin-top: 10px;
     margin-bottom: 0;
+    font-weight: 400;
+    color: #000;
+    text-transform: capitalize;
+    font-size: calc(19px - (17px * 0.15)) !important;
 }
+
+.product-item{
+    border: 1px solid #e5e5e5;
+    padding: 5px;
+}
+.product-content .price{
+    font-size: 13px;
+    color: #000
+}
+.cardStyle .price{
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
 .btn-default{
     background-color: #dcb78d !important;
+}
+
+figure {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+.product-content{
+    text-align: center;
+}
+.packInfo {
+    text-align: center;
+}
+.packInfo h2 {
+    margin-bottom: 5px
+}
+
+
+@media only screen and (max-width:770px) {
+  .cardStyle {
+    padding: 28px 5px !important;
+      text-align: center;
+
+  }
+  .cardStyle img {
+      height: 153px;
+      border-radius: 0
+  }
+  .imageCat{
+      height: 153px;
+  }
+  .product-content h5 {
+    font-size: 17px;
+}
+ .product-content p {
+     font-size: 13px
+  }
+  
 }

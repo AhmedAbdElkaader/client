@@ -6,6 +6,30 @@
     background: #dcb78d;
     color: #fff;
 }
+ figure {
+    margin-bottom: 0 !important
+}
+
 .product-item {
     margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    padding: 15px 5px;
+    border-radius: 10px;
 }
+.product-content {
+    text-align: center
+}
+.product-content h5 {
+    font-size: 17px;
+    margin-bottom: 1px;
+
+}
+.product-content p {
+    font-size: 13px
+}
+
+@media only screen and (max-width:768px) {
+    figure img {
+        height: 153px;
+    }
+ }
