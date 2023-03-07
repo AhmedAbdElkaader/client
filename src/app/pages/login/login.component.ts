@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RestService } from 'src/app/services/rest.service';
 import { Router } from '@angular/router';
+import {
+  SocialAuthService,
+  FacebookLoginProvider,
+  SocialUser,
+} from 'angularx-social-login';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,15 +15,21 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private rest :RestService , private route : Router){}
+  constructor(private rest :RestService ,
+    private socialAuthService: SocialAuthService,
+     private route : Router){}
 
   loginForm: FormGroup | any;
-
+  socialUser!: SocialUser;
   ngOnInit(){
     this.loginForm = new FormGroup({
       email: new FormControl("", [Validators.required,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
       password: new FormControl("", [Validators.required]),
     })
+
+    this.socialAuthService.authState.subscribe((user:any) => {
+      this.socialUser = user;
+    });
   }
 
   login(){
@@ -35,6 +47,9 @@ export class LoginComponent implements OnInit {
         this.rest.erorrToaster("Pleas check Email Or Password")
       })
     }
+  }
+  loginWithFacebook(): void {
+    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
 }

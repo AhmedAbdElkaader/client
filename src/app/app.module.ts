@@ -32,7 +32,11 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { ForgetpwComponent } from './pages/forgetpw/forgetpw.component';
 import { ResetpwComponent } from './pages/resetpw/resetpw.component';
 import { UpdateMoreInfoComponent } from './pages/update-more-info/update-more-info.component';
-
+import {
+  FacebookLoginProvider,
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from 'angularx-social-login';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,9 +73,23 @@ import { UpdateMoreInfoComponent } from './pages/update-more-info/update-more-in
     MatMenuModule,
     MatIconModule,
     MatDialogModule,
+    SocialLoginModule,
     ToastrModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('728262872134183'),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
